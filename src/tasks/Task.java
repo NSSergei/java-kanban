@@ -1,15 +1,17 @@
+package  tasks;
+
 public class Task {
-    private String id;
+    private long id;
     private String description;
     private Status status;
 
-    Task(String id, String description,Status status) {
+    Task(long id, String description,Status status) {
         this.id = id;
         this.description = description;
         this.status = status;
     }
 
-    public String getId(){
+    public long getId(){
         return id;
     }
 
@@ -17,9 +19,10 @@ public class Task {
         return  description;
     }
 
-    public Status getStatus(){
+    public Status getStatus() {
         return status;
     }
+
     public void setStatus(Status status) {
         this.status = status;
     }

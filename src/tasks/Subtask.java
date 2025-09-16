@@ -1,14 +1,16 @@
-public class Subtask extends Task{
-    private String epicId;
-    Subtask(String id, String description,Status status,String epicId){
+package tasks;
+
+public class Subtask extends Task {
+    private long epicId;
+    Subtask(long id, String description,Status status,long epicId){
         super(id,description, status);
         this.epicId = epicId;
     }
 
-    public void setEpicId(String epicId){
+    public void setEpicId(long epicId){
         this.epicId = epicId;
     }
-    public String getEpicId(){
+    public long getEpicId(){
         return epicId;
     }
 

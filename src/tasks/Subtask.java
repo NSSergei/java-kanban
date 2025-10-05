@@ -2,8 +2,8 @@ package tasks;
 
 public class Subtask extends Task {
     private long epicId;
-    Subtask(long id, String description,Status status,long epicId){
-        super(id,description, status);
+    public Subtask(String description,Status status,long epicId){
+        super(description, status);
         this.epicId = epicId;
     }
 
@@ -17,10 +17,19 @@ public class Subtask extends Task {
     @Override
     public String toString() {
         return "Subtask{" +
-                "id=" + getId() +
-                ", description=" + getDescription() +
+                /*"id=" + getId() +*/
+                "description='" + getDescription() + '\'' +
                 ", epicId=" + epicId +
                 ", status=" + getStatus() +
-                "}";
+                '}';
+    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Subtask)) return false;
+        Subtask subtask = (Subtask) o;
+        return getId() == subtask.getId() &&
+                getEpicId() == subtask.getEpicId() &&
+                getDescription().equals(subtask.getDescription());
     }
 }
